@@ -1,0 +1,9 @@
+{application, 'websocket_cowboy', [
+	{description, "New project"},
+	{vsn, "0.1.0"},
+	{modules, [websocket_cowboy_app','websocket_cowboy_sup','web_socket']},
+	{registered, [websocket_cowboy_sup]},
+	{applications, [kernel,stdlib,cowboy]},
+	{mod, {websocket_cowboy_app, []}},
+	{env, []}
+]}.
