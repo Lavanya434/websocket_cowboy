@@ -7,8 +7,11 @@
 start(_Type, _Args) ->
 	Dispatch = cowboy_router:compile([
 		{'_', [
-			{"/", cowboy_static, {priv_file, websocket_cowboy, "index.html"}},
-			{"/websocket_cowboy", web_socket, []}
+			{"/[...]", cowboy_static, {priv_file, websocket_cowboy, "cowboy.jpg",
+			[
+               			{mimetypes, cow_mimetypes, all}
+             ]
+		}}	%{"/", web_socket, []}
 		]}
 	]),
 	{ok, _} = cowboy:start_http(http, 100, [{port, 8080}], 
